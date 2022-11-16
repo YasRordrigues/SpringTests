@@ -48,8 +48,6 @@ class UserControllerTest {
         user.setEmail("emailteste@test.com");
         user.setPassword("lalala");
 
-        userService.createUser(user);
-
         //when
         ResultActions result = mockMvc.perform(post("/api/users/createUser")
                 .content(objectMapper.writeValueAsString(user))
