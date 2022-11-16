@@ -2,16 +2,18 @@ package com.example.testes.controller;
 
 import com.example.testes.models.User;
 import com.example.testes.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("users")
+@RequestMapping("/api/users")
+@RequiredArgsConstructor
 public class UserController {
     private UserService userService;
 
-    @GetMapping("listAll")
+    @GetMapping
     public List<User> listAll() {
         return userService.ListUsers();
     }
